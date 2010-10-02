@@ -7,19 +7,9 @@ AC_PROG_LIBTOOL
 
 AC_C_INLINE
 
-AC_MSG_CHECKING([whether pthread_mutex_t is larger than 24 bytes])
-AC_TRY_RUN( 
-  [   
+AC_CHECK_SIZEOF(pthread_mutex_t,[],[
 #include <pthread.h>
-int main(void){return (sizeof(pthread_mutex_t) > 24);}
-  ],
-  [AC_MSG_RESULT(yes)],
-  [
-    AC_MSG_RESULT(no)
-    AC_DEFINE(UMEM_PTHREAD_MUTEX_TOO_BIG, [1], [need bigger cache])
-    AC_MSG_WARN([*** increasing umem cpu cache size to compensate.])
-  ]
-) 
+])
 
 AC_CHECK_LIB(dl,dlopen)
 

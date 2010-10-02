@@ -235,7 +235,7 @@ typedef struct umem_magtype {
 	umem_cache_t	*mt_cache;	/* magazine cache */
 } umem_magtype_t;
 
-#if (defined(__PTHREAD_MUTEX_SIZE__) && __PTHREAD_MUTEX_SIZE__ >= 24) || defined(UMEM_PTHREAD_MUTEX_TOO_BIG)
+#if SIZEOF_PTHREAD_MUTEX_T >= 24
 #define	UMEM_CPU_CACHE_SIZE	128	/* must be power of 2 */
 #else
 #define	UMEM_CPU_CACHE_SIZE	64	/* must be power of 2 */
@@ -255,7 +255,7 @@ typedef struct umem_cpu_cache {
 	int		cc_prounds;	/* number of objects in previous mag */
 	int		cc_magsize;	/* number of rounds in a full mag */
 	int		cc_flags;	/* CPU-local copy of cache_flags */
-#if (!defined(_LP64) || defined(UMEM_PTHREAD_MUTEX_TOO_BIG)) && !defined(_WIN32)
+#if (!defined(_LP64) || SIZEOF_PTHREAD_MUTEX_T != 24) && !defined(_WIN32)
 	/* on win32, UMEM_CPU_PAD evaluates to zero, and the MS compiler
 	 * won't allow static initialization of arrays containing structures
 	 * that contain zero size arrays */

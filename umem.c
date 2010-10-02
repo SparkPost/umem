@@ -551,7 +551,7 @@ umem_log_header_t *umem_slab_log;
 
 extern thread_t _thr_self(void);
 #ifndef CPUHINT
-# define CPUHINT()	((int)(_thr_self()))
+# define CPUHINT()	((int)(intptr_t)(_thr_self()))
 #endif
 
 
