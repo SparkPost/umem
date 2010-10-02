@@ -28,3 +28,4 @@ umem.spec
 umem_test
 umem_test2
 umem_test3
+*.core
