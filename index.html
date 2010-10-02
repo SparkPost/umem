@@ -10,7 +10,7 @@
 	<style type="text/css">
 		body {
   		margin-top: 1.0em;
-  		background-color: #87BE60;
+  		background-color: #ffffff;
 		  font-family: "Helvetica,Arial,FreeSans";
   		color: #000000;
     }
@@ -18,12 +18,12 @@
       margin: 0 auto;
       width: 700px;
     }
-		h1 { font-size: 3.8em; color: #78419f; margin-bottom: 3px; }
+		h1 { font-size: 3.8em; color: #3D8A97; margin-bottom: 3px; }
 		h1 .small { font-size: 0.4em; }
 		h1 a { text-decoration: none }
-		h2 { font-size: 1.5em; color: #78419f; }
-    h3 { text-align: center; color: #78419f; }
-    a { color: #78419f; }
+		h2 { font-size: 1.5em; color: #3D8A97; }
+    h3 { text-align: center; color: #3D8A97; }
+    a { color: #3D8A97; }
     .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
     .download { float: right; }
 		pre { background: #000; color: #fff; padding: 15px;}
@@ -45,8 +45,7 @@
         <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
     </div>
 
-    <h1><a href="http://github.com/MessageSystems/umem">umem</a>
-      <span class="small">by <a href="http://github.com/MessageSystems">MessageSystems</a></span></h1>
+    <h1><a href="http://github.com/MessageSystems/umem">umem</a></h1>
 
     <div class="description">
       This is a port of the Solaris umem memory allocator to other popular operating systems, such as Linux, Windows and BSDish systems (including Darwin/OSX).
@@ -55,25 +54,31 @@
     <p>libumem is a slab allocator with a number of debugging options taken from OpenSolaris and made to run on a variety of other systems.
 
 You can read more about using umem here:
-http://developers.sun.com/solaris/articles/libumem_library.html
-
-And more about Jeff Bonwicks earlier work on the kernel equivalent here:
-http://www.usenix.org/publications/library/proceedings/bos94/bonwick.html
+<a href='http://developers.sun.com/solaris/articles/libumem_library.html'
+>Identifying Memory Management Bugs Within Applications Using the libumem Library</a>, and more about Jeff Bonwicks earlier work on the kernel equivalent here:
+<a href='http://www.usenix.org/publications/library/proceedings/bos94/bonwick.html'
+>The Slab Allocator: An Object-Caching Kernel Memory Allocator</a>
 
 </p><h2>Dependencies</h2>
 <p>Builds on Linux, Mac OS/X, FreeBSD.
 Contains code that runs on Windows, but currently does not ship with build/project files for Windows--contributions welcomed!</p>
 <h2>Install</h2>
-<p>Run ./autogen.sh to generate the configure script.
-Then run ./configure ; make ; make install</p>
+<pre>$ ./autogen.sh
+$ ./configure
+$ make
+$ make check
+$ make install
+</pre>
 <h2>License</h2>
-<p>The code is available under the terms of the CDDL Version 1.0.
-http://github.com/MessageSystems/umem/blob/master/OPENSOLARIS.LICENSE
+<p>The code is available under the terms of the CDDL Version 1.0.<br/>
+<a href='http://github.com/MessageSystems/umem/blob/master/OPENSOLARIS.LICENSE'>Read the full license text here</a>
 </p>
+
 <h2>Authors</h2>
-<p>Jeff Bonwick<br/>(and presumably) Jonathan Adams<br/><br/>Ported by Wez Furlong.<br/><br/>      </p>
+<p>Jeff Bonwick<br/>(and presumably) Jonathan Adams<br/><br/>Ported by Wez Furlong.<br/><br/>      </p>
 <h2>Contact</h2>
-<p>Message Systems, Inc. (wez@messagesystems.com)<br/>      </p>
+<p><a href='http://github.com/wez'>Wez Furlong</a>
+</p>
 
 
     <h2>Download</h2>
